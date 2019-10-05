@@ -1,0 +1,14 @@
+C:\Temp\SQLSAT906\EFSQLSAT906\DemoCodeFirst\bin\Debug\DemoCodeFirst.exe.config
+C:\Temp\SQLSAT906\EFSQLSAT906\DemoCodeFirst\bin\Debug\DemoCodeFirst.exe
+C:\Temp\SQLSAT906\EFSQLSAT906\DemoCodeFirst\bin\Debug\DemoCodeFirst.pdb
+C:\Temp\SQLSAT906\EFSQLSAT906\DemoCodeFirst\bin\Debug\EntityFramework.dll
+C:\Temp\SQLSAT906\EFSQLSAT906\DemoCodeFirst\bin\Debug\EntityFramework.SqlServer.dll
+C:\Temp\SQLSAT906\EFSQLSAT906\DemoCodeFirst\bin\Debug\EntityFramework.xml
+C:\Temp\SQLSAT906\EFSQLSAT906\DemoCodeFirst\bin\Debug\EntityFramework.SqlServer.xml
+C:\Temp\SQLSAT906\EFSQLSAT906\DemoCodeFirst\obj\Debug\DemoCodeFirst.Properties.Resources.resources
+C:\Temp\SQLSAT906\EFSQLSAT906\DemoCodeFirst\obj\Debug\DemoCodeFirst.csproj.GenerateResource.cache
+C:\Temp\SQLSAT906\EFSQLSAT906\DemoCodeFirst\obj\Debug\DemoCodeFirst.csproj.CoreCompileInputs.cache
+C:\Temp\SQLSAT906\EFSQLSAT906\DemoCodeFirst\obj\Debug\DemoCodeFirst.csproj.CopyComplete
+C:\Temp\SQLSAT906\EFSQLSAT906\DemoCodeFirst\obj\Debug\DemoCodeFirst.exe
+C:\Temp\SQLSAT906\EFSQLSAT906\DemoCodeFirst\obj\Debug\DemoCodeFirst.pdb
+C:\Temp\SQLSAT906\EFSQLSAT906\DemoCodeFirst\obj\Debug\DemoCodeFirst.Migrations.AddClienteTable.resources

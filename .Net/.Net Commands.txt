@@ -1,0 +1,79 @@
+public class Cliente
+{
+	public int Id { get; set; }
+	public string Nome { get; set; }
+	public string CpfCnpj { get; set; }
+	public DateTime DataCadastro { get; set; }
+	public decimal LimiteCredito { get; set; }
+}
+
+public class ClienteMap : EntityTypeConfiguration<Cliente>
+{
+	public ClienteMap()
+	{
+		//this.ToTable("Cliente");
+		this.HasKey(x => x.Id);
+		this.Property(x => x.Nome).IsRequired().HasMaxLength(100).HasColumnType("varchar");
+		this.Property(x => x.CpfCnpj).IsRequired().HasMaxLength(14).HasColumnType("varchar");
+		this.Property(x => x.DataCadastro).HasColumnType("date");
+		this.Property(x => x.LimiteCredito).HasColumnType("decimal").HasPrecision(10, 2);
+		this.HasIndex(x => x.Nome);
+	}
+}
+
+public class AppDBContext : DbContext
+{
+	public AppDBContext() : base("server=x1-carbon\\sql2017dev;database=EFSQL05;user id=xxx;password=xxx")
+	{ }
+	public DbSet<Cliente> Clientes{ get; set; }
+
+	protected override void OnModelCreating(DbModelBuilder modelBuilder)
+	{
+		modelBuilder.Configurations.Add(new ClienteMap());
+	}
+}
+
+
+var cli = (from c in db.Clientes
+		   where c.Nome == "Marcel"
+		   select c).FirstOrDefault<Cliente>();
+
+
+
+//SELECT TOP 1
+var q = new AppDBContext();
+_ = q.Clientes.Find(1);
+
+//SELECT * WHERE =
+string nome = "Marcel";
+using (var db = new AppDBContext())
+{
+	var cli = db.Clientes
+				.Where(c => c.Nome == nome)
+				.ToList();
+}
+//SELECT * WHERE Nome LIKE '%NOME%'
+string nome = "Marcel";
+using (var db = new AppDBContext())
+{
+	var cli = db.Clientes
+				.Where(c => c.Nome.Contains(nome))
+				.ToList();
+}
+//SELECT * WHERE Nome LIKE 'NOME%'
+string nome = "Marcel";
+using (var db = new AppDBContext())
+{
+	var cli = db.Clientes
+				.Where(c => c.Nome.StartsWith(nome))
+				.ToList();
+}
+//SELECT Id, Nome WHERE Nome = 
+using (var context = new AppDBContext())
+{
+	string nome = "Marcel";
+	var cli = context.Clientes
+				.Where(c => c.Nome.StartsWith(nome))
+				.Select(c=> new { c.Id, c.Nome})
+				.ToList();
+}
